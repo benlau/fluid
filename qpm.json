@@ -1,6 +1,6 @@
 {
   "name": "com.github.benlau.fluid",
-  "description": "",
+  "description": "Unofficial Fluid Package",
   "author": {
     "name": "Ben Lau",
     "email": "xbenlau@gmail.com"
@@ -10,7 +10,7 @@
     "url": "git@github.com:benlau/fluid.git"
   },
   "version": {
-    "label": "0.10.0",
+    "label": "0.10.0.1",
     "revision": "",
     "fingerprint": ""
   },
