@@ -7,7 +7,8 @@ CONFIG += c++11
 SOURCES += main.cpp \
     resourcegenerator.cpp
 
-DISTFILES += ../.gitignore
+DISTFILES += ../.gitignore \
+    fluid.pri.tmpl
 
 DEFINES += BUILD_PATH=\\\"$$OUT_PWD/\\\"
 DEFINES += SRC_PATH=\\\"$$PWD/\\\"

@@ -51,11 +51,24 @@ int main(int argc, char *argv[])
         QtShell::rm("-v", file);
     }
 
+    // Generate fluid.qrc
+
     ResourceGenerator generator;
     generator.setRoot(dist);
 
     generator.scan("/", fluidDestPath);
     generator.save(QtShell::realpath_strip(dist, "fluid.qrc"));
+
+    // Generate fluid.pri
+    {
+        QString content = QtShell::cat(QtShell::realpath_strip(SRC_PATH, "fluid.pri.tmpl"));
+
+        QFile file(QtShell::realpath_strip(dist, "fluid.pri"));
+        file.open(QIODevice::WriteOnly);
+
+        file.write(content.toUtf8());
+
+    }
 
 
     return 0;

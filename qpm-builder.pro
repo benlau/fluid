@@ -1,4 +1,4 @@
 TEMPLATE = subdirs
 
-SUBDIRS += orig/fluid src
-
+SUBDIRS += orig/fluid \
+           src
