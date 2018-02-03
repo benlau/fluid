@@ -2,6 +2,7 @@
 #include <QCoreApplication>
 #include <QtCore>
 #include <QtShell>
+#include "resourcegenerator.h"
 
 int main(int argc, char *argv[])
 {
@@ -9,6 +10,7 @@ int main(int argc, char *argv[])
 
     Q_UNUSED(app);
 
+    // Create Fluid package
 
     QString dist = QtShell::realpath_strip(SRC_PATH, "../dist");
 
@@ -19,6 +21,42 @@ int main(int argc, char *argv[])
     QString fluidDestPath = QtShell::realpath_strip(dist, "Fluid");
 
     QtShell::cp("-av", fluidSourcePath + "/*", fluidDestPath);
+
+    // Remove unwanted files
+
+    QStringList files = QtShell::find(fluidDestPath);
+
+    QStringList acceptedSuffix;
+    QStringList acceptedFileName;
+
+    acceptedFileName << "qmldir";
+    acceptedSuffix << "svg" << "qml";
+    foreach (auto file, files) {
+        QString name = QtShell::basename(file);
+
+        QFileInfo info(file);
+
+        if (info.isDir()) {
+            continue;
+        }
+
+        if (acceptedFileName.indexOf(name) >= 0) {
+            continue;
+        }
+
+        if (acceptedSuffix.indexOf(info.suffix()) >= 0) {
+            continue;
+        }
+
+        QtShell::rm("-v", file);
+    }
+
+    ResourceGenerator generator;
+    generator.setRoot(dist);
+
+    generator.scan("/", fluidDestPath);
+    generator.save(QtShell::realpath_strip(dist, "fluid.qrc"));
+
 
     return 0;
 }
