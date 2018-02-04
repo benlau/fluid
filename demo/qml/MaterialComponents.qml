@@ -17,10 +17,10 @@ import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
 import Fluid.Controls 1.0
-import "Pages/Layouts"
+import "Pages/Material"
 
 Tab {
-    title: qsTr("Layout")
+    title: qsTr("Material")
 
     Pane {
         id: listPane
@@ -43,8 +43,12 @@ Tab {
             anchors.fill: parent
             currentIndex: 0
             model: ListModel {
-                ListElement { title: qsTr("AutomaticGrid"); source: "qrc:/qml/Pages/Layouts/AutomaticGridPage.qml" }
-                ListElement { title: qsTr("ColumnFlow"); source: "qrc:/qml/Pages/Layouts/ColumnFlowPage.qml" }
+                ListElement { title: qsTr("ActionButton"); source: "qrc:/qml/Pages/Material/ActionButtonPage.qml" }
+                ListElement { title: qsTr("BottomSheet"); source: "qrc:/qml/Pages/Material/BottomSheetPage.qml" }
+                ListElement { title: qsTr("Wave"); source: "qrc:/qml/Pages/Material/WavePage.qml" }
+                ListElement {
+                    title: qsTr("Search"); source: "qrc:/qml/Pages/Material/Search.qml"
+                }
             }
             header: Subheader {
                 text: qsTr("Demos")
@@ -70,6 +74,6 @@ Tab {
             right: parent.right
             bottom: parent.bottom
         }
-        initialItem: AutomaticGridPage {}
+        initialItem: ActionButtonPage {}
     }
 }

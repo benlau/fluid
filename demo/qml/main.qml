@@ -1,8 +1,8 @@
 /*
  * This file is part of Fluid.
  *
- * Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
- * Copyright (C) 2018 Michael Spencer <sonrisesoftware@gmail.com>
+ * Copyright (C) 2017 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+ * Copyright (C) 2017 Michael Spencer <sonrisesoftware@gmail.com>
  *
  * $BEGIN_LICENSE:MPL2$
  *
@@ -13,10 +13,10 @@
  * $END_LICENSE$
  */
 
-import QtQuick 2.10
-import QtQuick.Controls 2.3
-import QtQuick.Controls.Material 2.3
-import QtQuick.Controls.Universal 2.3
+import QtQuick 2.6
+import QtQuick.Controls 2.0
+import QtQuick.Controls.Material 2.0
+import QtQuick.Controls.Universal 2.0
 import QtQuick.Layouts 1.3
 import Fluid.Controls 1.0
 
@@ -60,28 +60,28 @@ ApplicationWindow {
         actions: [
             Action {
                 text: qsTr("Action 1")
-                icon.source: FluidControls.Utils.iconUrl("action/info")
+                iconName: "action/info"
                 onTriggered: console.log("action1 triggered")
             },
             Action {
                 text: qsTr("Action 2")
-                icon.source: FluidControls.Utils.iconUrl("action/info")
+                iconName: "action/info"
                 hasDividerAfter: true
                 onTriggered: console.log("action2 triggered")
             },
             Action {
                 text: qsTr("Action 3")
-                icon.source: FluidControls.Utils.iconUrl("action/info")
+                iconName: "action/info"
                 onTriggered: console.log("action3 triggered")
             },
             Action {
                 text: qsTr("Action 4")
-                icon.source: FluidControls.Utils.iconUrl("action/info")
+                iconName: "action/info"
                 onTriggered: console.log("action4 triggered")
             },
             Action {
                 text: qsTr("Action 5")
-                icon.source: FluidControls.Utils.iconUrl("action/info")
+                iconName: "action/info"
                 visible: false
                 onTriggered: console.log("action5 triggered")
             }
@@ -92,49 +92,51 @@ ApplicationWindow {
         title: window.title
 
         leftAction: Action {
-            icon.source: FluidControls.Utils.iconUrl("navigation/menu")
+            iconName: "navigation/menu"
             onTriggered: navDrawer.open()
         }
 
         actions: [
             Action {
                 text: qsTr("Dummy error")
-                icon.source: FluidControls.Utils.iconUrl("alert/warning")
+                iconName: "alert/warning"
                 toolTip: qsTr("Show a dummy error")
                 onTriggered: console.log("Dummy error")
             },
             Action {
                 text: qsTr("Colors")
-                icon.source: FluidControls.Utils.iconUrl("image/color_lens")
+                iconName: "image/color_lens"
                 toolTip: qsTr("Pick a color")
                 onTriggered: console.log("Colors")
             },
             Action {
                 text: qsTr("Settings")
-                icon.source: FluidControls.Utils.iconUrl("action/settings")
+                iconName: "action/settings"
                 toolTip: qsTr("Settings")
                 hoverAnimation: true
                 onTriggered: console.log("Settings clicked")
             },
             Action {
                 text: qsTr("This should not be visible")
-                icon.source: FluidControls.Utils.iconUrl("alert/warning")
+                iconName: "alert/warning"
                 visible: false
             },
             Action {
                 text: qsTr("Language")
-                icon.source: FluidControls.Utils.iconUrl("action/language")
+                iconName: "action/language"
                 enabled: false
             },
             Action {
                 text: qsTr("Accounts")
-                icon.source: FluidControls.Utils.iconUrl("action/account_circle")
+                iconName: "action/account_circle"
             }
         ]
 
         BasicComponents {}
         LayoutComponents {}
-        Controls {}
+        CompoundComponents {}
+        MaterialComponents {}
+        NavigationComponents {}
         Style {}
     }
 }

@@ -17,10 +17,10 @@ import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
 import Fluid.Controls 1.0
-import "Pages/Layouts"
+import "Pages/Compound"
 
 Tab {
-    title: qsTr("Layout")
+    title: qsTr("Compound")
 
     Pane {
         id: listPane
@@ -43,8 +43,11 @@ Tab {
             anchors.fill: parent
             currentIndex: 0
             model: ListModel {
-                ListElement { title: qsTr("AutomaticGrid"); source: "qrc:/qml/Pages/Layouts/AutomaticGridPage.qml" }
-                ListElement { title: qsTr("ColumnFlow"); source: "qrc:/qml/Pages/Layouts/ColumnFlowPage.qml" }
+                ListElement { title: qsTr("ListItem"); source: "qrc:/qml/Pages/Compound/ListItemPage.qml" }
+                ListElement { title: qsTr("Card"); source: "qrc:/qml/Pages/Compound/CardPage.qml" }
+                ListElement { title: qsTr("InfoBar"); source: "qrc:/qml/Pages/Compound/InfoBarPage.qml" }
+                ListElement { title: qsTr("Dialogs"); source: "qrc:/qml/Pages/Compound/DialogsPage.qml" }
+                ListElement { title: qsTr("Overlay"); source: "qrc:/qml/Pages/Compound/OverlayPage.qml" }
             }
             header: Subheader {
                 text: qsTr("Demos")
@@ -70,6 +73,6 @@ Tab {
             right: parent.right
             bottom: parent.bottom
         }
-        initialItem: AutomaticGridPage {}
+        initialItem: ListItemPage {}
     }
 }

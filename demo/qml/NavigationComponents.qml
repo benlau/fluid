@@ -17,10 +17,10 @@ import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import QtQuick.Controls.Universal 2.0
 import Fluid.Controls 1.0
-import "Pages/Layouts"
+import "Pages/Navigation"
 
 Tab {
-    title: qsTr("Layout")
+    title: qsTr("Navigation")
 
     Pane {
         id: listPane
@@ -43,8 +43,7 @@ Tab {
             anchors.fill: parent
             currentIndex: 0
             model: ListModel {
-                ListElement { title: qsTr("AutomaticGrid"); source: "qrc:/qml/Pages/Layouts/AutomaticGridPage.qml" }
-                ListElement { title: qsTr("ColumnFlow"); source: "qrc:/qml/Pages/Layouts/ColumnFlowPage.qml" }
+                ListElement { title: qsTr("NavigationDrawer"); source: "qrc:/qml/Pages/Navigation/NavDrawerPage.qml" }
             }
             header: Subheader {
                 text: qsTr("Demos")
@@ -70,6 +69,6 @@ Tab {
             right: parent.right
             bottom: parent.bottom
         }
-        initialItem: AutomaticGridPage {}
+        initialItem: NavDrawerPage {}
     }
 }

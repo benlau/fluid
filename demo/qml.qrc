@@ -40,5 +40,19 @@
         <file>qml/Style.qml</file>
         <file>qml/StyledPage.qml</file>
         <file>qml/StyledRectangle.qml</file>
+        <file>qml/Pages/Compound/CardPage.qml</file>
+        <file>qml/Pages/Compound/DialogsPage.qml</file>
+        <file>qml/Pages/Compound/InfoBarPage.qml</file>
+        <file>qml/Pages/Compound/ListItemPage.qml</file>
+        <file>qml/Pages/Compound/OverlayPage.qml</file>
+        <file>qml/Pages/Compound/SubPage.qml</file>
+        <file>qml/Pages/Material/ActionButtonPage.qml</file>
+        <file>qml/Pages/Material/BottomSheetPage.qml</file>
+        <file>qml/Pages/Material/Search.qml</file>
+        <file>qml/Pages/Material/WavePage.qml</file>
+        <file>qml/Pages/Navigation/NavDrawerPage.qml</file>
+        <file>qml/CompoundComponents.qml</file>
+        <file>qml/MaterialComponents.qml</file>
+        <file>qml/NavigationComponents.qml</file>
     </qresource>
 </RCC>

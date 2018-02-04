@@ -1,8 +1,8 @@
 /*
  * This file is part of Fluid.
  *
- * Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
- * Copyright (C) 2018 Michael Spencer <sonrisesoftware@gmail.com>
+ * Copyright (C) 2017 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+ * Copyright (C) 2017 Michael Spencer <sonrisesoftware@gmail.com>
  *
  * $BEGIN_LICENSE:MPL2$
  *
@@ -17,9 +17,8 @@
 #include <QQmlApplicationEngine>
 #include <QQuickStyle>
 #include <QQmlContext>
-
-#include "iconcategorymodel.h"
-#include "iconnamemodel.h"
+#include "iconthemeimageprovider.h"
+#include "iconsimageprovider.h"
 
 int main(int argc, char *argv[])
 {
@@ -30,13 +29,12 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     app.setQuitOnLastWindowClosed(true);
 
-
-    // @uri Fluid.Demo
-    qmlRegisterType<IconCategoryModel>("Fluid.Demo", 1, 0, "IconCategoryModel");
-    qmlRegisterType<IconNameModel>("Fluid.Demo", 1, 0, "IconNameModel");
-
     QQmlApplicationEngine engine;
     engine.addImportPath("qrc:///");
+    engine.addImageProvider(QLatin1String("fluidicontheme"), new IconThemeImageProvider());
+    engine.addImageProvider(QLatin1String("fluidicons"), new IconsImageProvider());
+
+
     engine.load(QUrl(QLatin1String("qrc:/qml/main.qml")));
 
     return app.exec();

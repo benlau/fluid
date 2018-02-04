@@ -62,14 +62,23 @@ int main(int argc, char *argv[])
     // Generate fluid.pri
     {
         QString content = QtShell::cat(QtShell::realpath_strip(SRC_PATH, "fluid.pri.tmpl"));
-
         QFile file(QtShell::realpath_strip(dist, "fluid.pri"));
         file.open(QIODevice::WriteOnly);
-
         file.write(content.toUtf8());
-
     }
 
+    {
+        auto files = QtShell::find(QtShell::realpath_strip(SRC_PATH, "../orig/fluid/src/imports"), "*.h");
+        foreach (auto file, files) {
+            QtShell::cp(file, dist);
+        }
+
+        files = QtShell::find(QtShell::realpath_strip(SRC_PATH, "../orig/fluid/src/imports"), "*.cpp");
+        foreach (auto file, files) {
+            QtShell::cp(file, dist);
+        }
+
+    }
 
     return 0;
 }

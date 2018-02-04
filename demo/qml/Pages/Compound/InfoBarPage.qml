@@ -13,9 +13,18 @@
  */
 
 import QtQuick 2.0
+import QtQuick.Controls 2.0
+import Fluid.Controls 1.0
 
-Rectangle {
-    // Default styled rectangle is red to spot errors
-    // related to how styles are loaded
-    color: "red"
+Item {
+    Button {
+        anchors.centerIn: parent
+        text: qsTr("Open")
+        onClicked: infoBar.open(qsTr("Message sent"))
+    }
+
+    InfoBar {
+        id: infoBar
+        buttonText: qsTr("OK")
+    }
 }
