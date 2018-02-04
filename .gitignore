@@ -1,0 +1,7 @@
+build/
+*.user
+*.qmlc
+orig/fluid
+vendor
+dist
+build-*

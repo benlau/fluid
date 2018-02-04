@@ -1,0 +1,3 @@
+module Fluid.Core
+Object 1.0 Object.qml
+singleton Utils 1.0 Utils.qml
