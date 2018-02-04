@@ -1,0 +1,22 @@
+{
+  "name": "com.github.benlau.fluid",
+  "description": "Unofficial Fluid Package",
+  "author": {
+    "name": "Ben Lau",
+    "email": "xbenlau@gmail.com"
+  },
+  "repository": {
+    "type": "GITHUB",
+    "url": "git@github.com:benlau/fluid.git"
+  },
+  "version": {
+    "label": "0.11.0.1",
+    "revision": "",
+    "fingerprint": ""
+  },
+  "dependencies": [
+  ],
+  "license": "MPL_2_0",
+  "pri_filename": "fluid.pri",
+  "webpage": ""
+}
